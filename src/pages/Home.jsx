@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default function Home() {
   const handleSearch = (query) => {
@@ -15,6 +16,9 @@ export default function Home() {
             histoire.
           </p>
           <p>C'est un projet d'exam. Bonjour Cédric !</p>
+	  <Link to="/heroes">
+            <button style={{ marginTop: '20px' }}>Voir les héros</button>
+          </Link>
         </section>
       </main>
     </>
