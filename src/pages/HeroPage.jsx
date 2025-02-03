@@ -2,7 +2,7 @@ import React from 'react';
 import ApiFetch from '../API/ApiFetch';
 
 const HeroPage = () => {
-  const apiUrl = '/api/6040baa1745f59a38b297b484d754313'; // Utilisez le chemin relatif
+  const apiUrl = '/api/search/batman'; // Utilisez le chemin relatif
 
   return (
     <div>
