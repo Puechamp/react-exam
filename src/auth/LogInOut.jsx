@@ -1,5 +1,4 @@
 import { createContext, useState, useContext, useEffect } from "react";
-
 import Cookies from "js-cookie";
 
 const AuthContext = createContext(undefined);
@@ -18,7 +17,7 @@ function AuthProvider({ children }) {
     if (username === "admin" && password === "1234") {
       const newUser = { username };
       setUser(newUser);
-      Cookies.set("user", JSON.stringify(newUser)), { expires: 1 };
+      Cookies.set("user", JSON.stringify(newUser), { expires: 1 });
     } else {
       alert("Identifiants incorrects");
     }
@@ -28,6 +27,8 @@ function AuthProvider({ children }) {
     setUser(null);
     Cookies.remove("user");
   };
+
+  console.log('AuthProvider: user', user); // Ajoutez ce journal pour vérifier l'état de `user`
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>

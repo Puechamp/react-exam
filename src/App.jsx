@@ -1,14 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Router from "./routes/Router";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router';
+import { AuthProvider } from './auth/LogInOut';
+import AppRouter from './routes/Router';
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
+import './App.css';
 
 function App() {
+  const handleSearch = (query) => {
+    console.log('Search query:', query);
+  };
+
   return (
-    <>
-      <Router />
-    </>
+    <AuthProvider>
+      <Router>
+        <Header onSearch={handleSearch} />
+        <AppRouter />
+        <Footer backgroundColor="#333" />
+      </Router>
+    </AuthProvider>
   );
 }
 
