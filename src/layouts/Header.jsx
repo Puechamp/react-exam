@@ -1,5 +1,5 @@
 import React from 'react';
-import LogInOut from '../components/LogInOut';
+import LogInOut from '../auth/LogInOut';
 import SearchBar from '../components/SearchBar';
 
 const Header = ({ isLoggedIn, onSearch }) => {

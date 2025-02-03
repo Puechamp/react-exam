@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
       setUser(newUser);
       Cookies.set("user", JSON.stringify(newUser), { expires: 1 });
     } else {
-      alert("Incorrect credentials");
+      alert("Identifiants incorrects");
     }
   };
 
@@ -39,7 +39,7 @@ function AuthProvider({ children }) {
 function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error("Authentication context is undefined");
+    throw new Error("Authentification impossible");
   }
   return context;
 }
